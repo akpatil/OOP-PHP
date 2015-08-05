@@ -9,10 +9,7 @@ if(!$user->count())
 }
 else
 {
-	foreach($user->results() as $user)
-	{
-		echo $user->username, '<br />';
-	}
+	echo $user->first()->username;
 }
 
 ?>
