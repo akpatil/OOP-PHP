@@ -1,17 +1,14 @@
 <?php
 require_once 'core/init.php';
 
-/*
-echo Config::get('mysql/host');
+$user = DB::getInstance()->get('users', array('username', '=', 'akshay'));
 
-$users = DB::getInstance()->query('SELECT username FROM users');
-if($users->count())
+if(!$user->count())
 {
-	foreach($users as $user)
-	{
-		echo $user->username;
-	}
+	echo "No User";
 }
-*/
-$db = new DB();
+else
+{
+	echo "OK!";
+}
 ?>
